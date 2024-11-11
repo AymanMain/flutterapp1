@@ -8,40 +8,60 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          DrawerHeader(child: chid),
+          DrawerHeader(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  '../assets/images/logo.png',
+                  height: 80,
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'App Name',
+                ),
+              ],
+            ),
+          ),
           ExpansionTile(
-            leading: Icon(Icons.image),
-            title: Text('Classification Images'),
+            leading: const Icon(Icons.image),
+            title: const Text('Classification Images'),
             children: [
               ListTile(
-                  title: Text('ANN'),
-                  onTap: () {
-                    Navigator.pushNamed(context, 'ann');
-                  }),
-              ListTile(title: Text('CNN'), onTap: () {}),
+                title: const Text('ANN'),
+                onTap: () {
+                  Navigator.pushNamed(context, 'ann');
+                },
+              ),
+              ListTile(
+                title: const Text('CNN'),
+                onTap: () {
+                  Navigator.pushNamed(context, 'cnn');
+                },
+              ),
             ],
           ),
           ListTile(
-            leading: Icon(Icons.price_change),
-            title: Text('Stock Price Prediction'),
+            leading: const Icon(Icons.price_change),
+            title: const Text('Stock Price Prediction'),
             onTap: () {
               Navigator.pushNamed(context, 'profile');
             },
           ),
           ListTile(
-            leading: Icon(Icons.chat),
-            title: Text('LLM'),
+            leading: const Icon(Icons.chat),
+            title: const Text('LLM'),
             onTap: () {
               Navigator.pushNamed(context, 'llm');
             },
           ),
           ListTile(
-            leading: Icon(Icons.computer),
-            title: Text('RAG'),
+            leading: const Icon(Icons.computer),
+            title: const Text('RAG'),
             onTap: () {
               Navigator.pushNamed(context, 'rag');
             },
-          )
+          ),
         ],
       ),
     );

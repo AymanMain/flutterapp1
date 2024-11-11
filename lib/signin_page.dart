@@ -52,6 +52,7 @@ class _SigninPageState extends State<SigninPage> {
                   print('Email: $email, Password: $password');
                 },
               ),
+              SizedBox(height: 16.0),
               ElevatedButton(
                   child: Text('Sign Up'),
                   onPressed: () {
